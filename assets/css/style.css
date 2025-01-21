@@ -1207,3 +1207,88 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+.articles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.article-tile {
+  width: 300px;
+  height: 250px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  padding-bottom: 10px; /* Adds a line break after the title */
+  border-bottom: 1px solid #ddd; /* Creates a thin line below the title */
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures the content fills the tile without extra space */
+}
+
+.article-tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.article-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 10px 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap; /* Prevents the title from overflowing */
+}
+
+.article-description {
+  font-size: 14px;
+  color: #555;
+  /* margin: 0 15px; */
+  /* max-height: 6.5em; Limit to ~5 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  margin-top: 10px;
+}
+
+/* Transparent film overlay on hover */
+.read-more-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent film */
+  color: black; /* Change text color to black */
+  font-size: 18px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.article-tile:hover .read-more-overlay {
+  display: flex;
+  opacity: 1;
+}
+
+.read-more-overlay i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.read-more-overlay:hover {
+  background: rgba(0, 0, 0, 0.7); /* Slightly darker when hovered */
+}
